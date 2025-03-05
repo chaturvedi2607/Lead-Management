@@ -5,6 +5,7 @@ import { IoIosPeople } from "react-icons/io";
 import { MdOutlineWork } from "react-icons/md";
 import { Search } from "lucide-react";
 import { useState } from "react";
+import { IoPersonCircleOutline } from "react-icons/io5";
 
 const data = [
   { name: "Mon", Sales: 20, Marketing: 30, Design: 10 },
@@ -27,7 +28,11 @@ export default function Dashboard() {
             <Search className="absolute left-2 top-2 text-gray-400" />
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+          <img
+                src="src\components\profile.png"
+                alt="User"
+                className="w-8 h-8 rounded-full"
+              />
             <div>
               <span className="block font-semibold">Rashmika</span>
               <span className="text-gray-500 text-sm">HR Admin</span>
