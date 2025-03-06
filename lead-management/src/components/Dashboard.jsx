@@ -1,11 +1,19 @@
 import { Card, CardContent } from "./Card";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import { FaUsers, FaProjectDiagram } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
 import { MdOutlineWork } from "react-icons/md";
 import { Search } from "lucide-react";
 import { useState } from "react";
 import { IoPersonCircleOutline } from "react-icons/io5";
+import { Navbar } from "./Navbar";
 
 const data = [
   { name: "Mon", Sales: 20, Marketing: 30, Design: 10 },
@@ -20,31 +28,36 @@ const data = [
 export default function Dashboard() {
   return (
     <main className="flex-1 p-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Dashboard</h1>
-        <div className="flex gap-4 items-center">
-          <div className="relative">
-            <input type="text" placeholder="Search" className="border p-2 pl-8 rounded-md w-64" />
-            <Search className="absolute left-2 top-2 text-gray-400" />
-          </div>
-          <div className="flex items-center gap-2">
-          <img
-                src="src\components\profile.png"
-                alt="User"
-                className="w-8 h-8 rounded-full"
-              />
-            <div>
-              <span className="block font-semibold">Rashmika</span>
-              <span className="text-gray-500 text-sm">HR Admin</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Navbar heading="Dashboard" />
       <div className="grid grid-cols-4 gap-4 mt-6">
-        <Card><CardContent className="p-4 text-center"><FaUsers className="text-blue-500 text-2xl mx-auto" /><h2 className="text-xl font-semibold">560</h2><p className="text-gray-500">Total Employees</p></CardContent></Card>
-        <Card><CardContent className="p-4 text-center"><IoIosPeople className="text-green-500 text-2xl mx-auto" /><h2 className="text-xl font-semibold">1050</h2><p className="text-gray-500">Active Accounts</p></CardContent></Card>
-        <Card><CardContent className="p-4 text-center"><MdOutlineWork className="text-red-500 text-2xl mx-auto" /><h2 className="text-xl font-semibold">250</h2><p className="text-gray-500">Inactive Accounts</p></CardContent></Card>
-        <Card><CardContent className="p-4 text-center"><FaProjectDiagram className="text-purple-500 text-2xl mx-auto" /><h2 className="text-xl font-semibold">470</h2><p className="text-gray-500">Total Projects</p></CardContent></Card>
+        <Card>
+          <CardContent className="p-4 text-center">
+            <FaUsers className="text-blue-500 text-2xl mx-auto" />
+            <h2 className="text-xl font-semibold">560</h2>
+            <p className="text-gray-500">Total Employees</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 text-center">
+            <IoIosPeople className="text-green-500 text-2xl mx-auto" />
+            <h2 className="text-xl font-semibold">1050</h2>
+            <p className="text-gray-500">Active Accounts</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 text-center">
+            <MdOutlineWork className="text-red-500 text-2xl mx-auto" />
+            <h2 className="text-xl font-semibold">250</h2>
+            <p className="text-gray-500">Inactive Accounts</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 text-center">
+            <FaProjectDiagram className="text-purple-500 text-2xl mx-auto" />
+            <h2 className="text-xl font-semibold">470</h2>
+            <p className="text-gray-500">Total Projects</p>
+          </CardContent>
+        </Card>
       </div>
       <div className="mt-6 bg-white p-6 rounded-lg shadow">
         <h2 className="text-xl font-semibold mb-4">Employee Performance</h2>
@@ -53,9 +66,24 @@ export default function Dashboard() {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Line type="monotone" dataKey="Sales" stroke="red" strokeWidth={2} />
-            <Line type="monotone" dataKey="Marketing" stroke="green" strokeWidth={2} />
-            <Line type="monotone" dataKey="Design" stroke="blue" strokeWidth={2} />
+            <Line
+              type="monotone"
+              dataKey="Sales"
+              stroke="red"
+              strokeWidth={2}
+            />
+            <Line
+              type="monotone"
+              dataKey="Marketing"
+              stroke="green"
+              strokeWidth={2}
+            />
+            <Line
+              type="monotone"
+              dataKey="Design"
+              stroke="blue"
+              strokeWidth={2}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>

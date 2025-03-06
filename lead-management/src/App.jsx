@@ -1,21 +1,26 @@
-import React, { useState } from "react";
-import Dashboard from "./components/Dashboard";
+import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
+import Dashboard from "./components/Dashboard";
 import ManageAccount from "./components/ManageAccount";
-
+import EmployeeDeactivation from "./components/EmployeeDeactivation"; // Import the component
 
 function App() {
-  const [activePage, setActivePage] = useState("dashboard");
-
   return (
-    <div className="flex h-screen">
-      <Sidebar setActivePage={setActivePage} />
-      <div className="flex-1 p-6">
-        {activePage === "dashboard" && <Dashboard setActivePage={setActivePage} />}
-        {activePage === "manageAccount" && <ManageAccount />}
-        {activePage === "onboarding" && <h1>Employee Onboarding</h1>}
-        {activePage === "manageWork" && <h1>Manage Work</h1>}
-        {activePage === "settings" && <h1>Settings</h1>}
+    <div className="flex h-screen bg-gray-100">
+      <Sidebar />
+      <div className="flex-1 p-6 overflow-y-auto">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/manage-account" element={<ManageAccount />} />
+          <Route
+            path="/employee-deactivation"
+            element={<EmployeeDeactivation />}
+          />
+          <Route
+            path="*"
+            element={<h1 className="text-2xl font-semibold">Page not found</h1>}
+          />
+        </Routes>
       </div>
     </div>
   );
