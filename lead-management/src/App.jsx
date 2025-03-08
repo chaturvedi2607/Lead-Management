@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard";
 import ManageAccount from "./components/ManageAccount";
 import EmployeeDeactivation from "./components/EmployeeDeactivation"; // Import the component
+import ManageWork from "./components/ManageWork"; // Corrected the component name
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
             path="/employee-deactivation"
             element={<EmployeeDeactivation />}
           />
+          <Route path="/manage-work" element={<ManageWork />} />{" "}
+          {/* Fixed route */}
           <Route
             path="*"
             element={<h1 className="text-2xl font-semibold">Page not found</h1>}

@@ -9,9 +9,17 @@ const Sidebar = () => {
 
   const menuItems = [
     { name: "Dashboard", icon: <RxDashboard size={18} />, path: "/" },
-    { name: "Employee Onboarding", icon: <HiOutlineUserGroup size={18} />, path: "/employee-onboarding" },
-    { name: "Manage Account", icon: <FiBriefcase size={18} />, path: "/manage-account" },
-    { name: "Manage Work", icon: <FaTasks size={18} />, path: "/manage-work" },
+    {
+      name: "Employee Onboarding",
+      icon: <HiOutlineUserGroup size={18} />,
+      path: "/employee-onboarding",
+    },
+    {
+      name: "Manage Account",
+      icon: <FiBriefcase size={18} />,
+      path: "/manage-account",
+    },
+    { name: "Manage Work", icon: <FaTasks size={18} />, path: "/manage-work" }, // Updated path
     { name: "Settings", icon: <FiSettings size={18} />, path: "/settings" },
   ];
 

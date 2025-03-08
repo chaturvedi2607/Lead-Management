@@ -45,7 +45,7 @@ export const Navbar = ({ heading }) => {
           <FaCaretDown />
         </div>
         {isOpen && (
-          <div className="absolute top-14 right-0 bg-white border rounded-lg w-28 py-1">
+          <div className="absolute top-14 right-0 bg-white border rounded-lg w-28 py-1 z-40">
             <div className="flex gap-1 justify-start items-center px-4 py-1">
               <FaUser /> Profile
             </div>
